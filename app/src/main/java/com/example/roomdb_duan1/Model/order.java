@@ -1,6 +1,13 @@
 package com.example.roomdb_duan1.Model;
 
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+
+
+@Entity(foreignKeys = {@ForeignKey(entity = order_detail.class, parentColumns = "id_order", childColumns = "id_order", onDelete = ForeignKey.CASCADE)})
 public class order {
+    @PrimaryKey(autoGenerate = true)
     private String id_order;
     private String id_user;
     private String status;
